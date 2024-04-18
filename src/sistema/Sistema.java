@@ -16,26 +16,74 @@ public class Sistema {
 			opcao = sc.nextInt();
 			switch (opcao) {
 			case 1: {
-				hm.criar();
+				menu.menuUsuario();
+				int opcaoUsuario = sc.nextInt();
+				switch (opcaoUsuario) {
+				case 1: {
+					hm.criar();
+					continue;
+				}
+				case 2: {
+					hm.editar();
+					continue;
+				}
+				case 3: {
+					hm.deletar();
+					continue;
+				}
+				case 4: {
+					hm.listar();
+					continue;
+				}
+				case 5: {
+					hm.listarPorId();
+				}
+				case 6: {
+					hm.login();
+				}
+				case 7: {
+					hm.sair();
+				}
+				default:{
+					System.out.println("Opção inválida");
+				} 
+				while (opcaoUsuario != 9);
+				sc.close();
+				}
 				continue;
 			}case 2 : {
-				hm.editar();
+				menu.MenuProduto();
+				int opcaoUsuario = sc.nextInt();
+				switch (opcaoUsuario) {
+				case 1: {
+					hm.criarProd();
+					continue;
+				}
+				case 2: {
+					hm.editarProd();
+					continue;
+				}
+				case 3: {
+					hm.deletarProd();
+					continue;
+				}
+				case 4: {
+					hm.listarProd();
+					continue;
+				}
+				case 5: {
+					hm.listarPorIdProd();
+				}
+				case 6: {
+					hm.sair();
+				}
+				default:{
+					System.out.println("Opção inválida");
+				} 
+				while (opcaoUsuario != 9);
+				sc.close();
+				}
 				continue;
-			}case 3 : {
-				hm.deletar();
-				continue;
-			}case 4: {
-				hm.listar();
-				continue;
-			} case 5 : {
-				hm.listarPorId();
-				continue;
-			} case 6: {
-				hm.login();
-				continue;
-			}
-			case 9 : {
-				hm.sair();
 			}
 			default:
 				System.out.println("Opção inválida");
