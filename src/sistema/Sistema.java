@@ -37,11 +37,17 @@ public class Sistema {
 				}
 				case 5: {
 					hm.listarPorId();
+					continue;
 				}
 				case 6: {
 					hm.login();
+					continue;
 				}
 				case 7: {
+					hm.editarSenha();
+					continue;
+				}
+				case 8: {
 					hm.sair();
 				}
 				default:{
@@ -73,8 +79,17 @@ public class Sistema {
 				}
 				case 5: {
 					hm.listarPorIdProd();
+					continue;
 				}
 				case 6: {
+					hm.somarPrecos();
+					continue;
+				}
+				case 7: {
+					hm.quantidadeProd();
+					continue;
+				}
+				case 8: {
 					hm.sair();
 				}
 				default:{

@@ -8,10 +8,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
- 
+import java.util.Scanner;
+
 import models.Usuario;
  
 public class GerenciadorDeUsuarios {
+	Scanner sc = new Scanner(System.in);
 	private static final String NOME_ARQUIVO = "usuarios.txt";
 	//Verificar a existência do nosso banco de dados e criar caso não exista.
 	public void verificaECria(String nomeArquivo) {
@@ -129,6 +131,24 @@ public class GerenciadorDeUsuarios {
 		}
 		return false;
 
+	}
+	public void editarSenha() {
+		System.out.println("Faça seu login: ");
+		System.out.println("Digite o nome: ");
+		String nome = sc.next();
+		System.out.println("Digite a senha: ");
+		String senha = sc.next();
+		if (login(nome,senha)) {
+			System.out.println("Login realizado com sucesso!");
+			System.out.println("Digite a nova senha:");
+			String novaSenha = sc.next();
+			List<Usuario> usuarios = lerUsuarios();
+			for(Usuario usuario : usuarios) {
+				usuario.setSenha(novaSenha);
+			}
+		} else {
+			System.err.println("Credenciais inválidas! Tente novamente");
+		};
 	}
 
 

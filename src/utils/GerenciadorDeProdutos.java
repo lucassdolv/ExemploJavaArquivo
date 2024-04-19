@@ -122,5 +122,31 @@ public class GerenciadorDeProdutos {
 			System.out.println("Produto não encontrado.");
 		}
 	}
+	public void somarPrecos () {
+		List<Produto> produtos = lerProdutos();
+		if(produtos.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado");
+		}else {
+	        double somaPrecos = 0.0;
+	        for (Produto produto : produtos) {
+	            somaPrecos += produto.getPreco();
+	        }
+	        System.out.printf("A soma dos preços de todos os produtos cadastrados é: ", somaPrecos);
+	    }
+	}
+	public void somarProdutos () {
+		List<Produto> produtos = lerProdutos();
+		if(produtos.isEmpty()) {
+			System.out.println("Nenhum produto cadastrado");
+		}else {
+	        int quantidadeProd = produtos.size();
+	        int quantidadeTotal = 0;
+	        for (Produto produto: produtos) {
+	        	quantidadeTotal += produto.getQuantidade();
+	        	System.out.println("Temos cadastrados: " + quantidadeProd + " produtos e a quantidade total em estoque de: " + quantidadeTotal);
+	        }
+	    }
+		
+	}
 
 }

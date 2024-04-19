@@ -26,7 +26,8 @@ public class HandleMenu {
 		System.out.println("4- Listar Usuarios");
 		System.out.println("5- Listar Usuario por Id");
 		System.out.println("6- Login");
-		System.out.println("7- Sair");
+		System.out.println("7- Alterar senha");
+		System.out.println("8- Sair");
 	}
 	public void MenuProduto() {
 		System.out.println("Menu de Produtos:");
@@ -34,8 +35,10 @@ public class HandleMenu {
 		System.out.println("2- Editar Produto");
 		System.out.println("3- Deletar Produto");
 		System.out.println("4- Listar Produtos");
-		System.out.println("5- Listar Poduto por Id");
-		System.out.println("6- Sair");
+		System.out.println("5- Listar Produto por Id");
+		System.out.println("6- Somar Preços");
+		System.out.println("7- Quantidades totais de Produtos");
+		System.out.println("8- Sair");
 	}
 	//Construtor vazio
 	public HandleMenu() {
@@ -121,6 +124,17 @@ public class HandleMenu {
 		System.out.println("Digite o ID a ser listado: ");
 		long id = sc.nextLong();
 		gp.listarPorIdProd(id);
+	}
+	public void somarPrecos () {
+		System.out.println("Somando todos os preços");
+		gp.somarPrecos();
+	}
+	public void quantidadeProd () {
+		System.out.println("A seguir listaremos as quantidades de produtos:");
+		gp.somarProdutos();
+	}
+	public void editarSenha() {
+		gs.editarSenha();
 	}
 	
 	private int getNextId() {
